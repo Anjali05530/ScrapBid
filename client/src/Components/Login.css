@@ -1,0 +1,125 @@
+/* ====== Stylish Login Page ====== */
+
+/* Background */
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Login Container */
+  .login-container {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    background-color: darkblue;
+  }
+  
+  /* Heading */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Input Fields */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+  }
+  
+  .form-group input::placeholder {
+    color: black;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border: 2px solid black;
+  }
+  
+  /* Remember Me */
+  .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: left; /* Align to the right */
+    margin: 10px 0;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 0; /* Remove any extra spacing */
+    accent-color: #ff7eb3; /* Modern way to style the checkbox */
+}
+
+.remember-me label {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px; /* Small space between checkbox and label */
+    display: inline-block;
+    line-height: 16px; /* Aligns with checkbox size */
+}
+
+
+  
+  /* Button */
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #ff7eb3;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #ff5e99;
+  }
+  
+  /* Links */
+  .links {
+    margin-top: 10px;
+  }
+  
+  .forgot-password,
+  .register-link {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .forgot-password:hover,
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
