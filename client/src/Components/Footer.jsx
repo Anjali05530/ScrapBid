@@ -13,6 +13,7 @@ const Footer = () => {
     flexDirection: "column",
     alignItems: "center",
     marginTop: "auto", 
+    overflowX: "hidden",
   };
 
   const containerStyle = {

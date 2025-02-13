@@ -1,11 +1,10 @@
 import React from "react";
-import { FaSearch, FaTruck, FaHeart } from "react-icons/fa";
+import { FaTruck,FaHeart,FaSearch} from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Navbar = () => {
   return (
     <div style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 1000 }}>
-      {/* Top Header */}
       <div style={{
         backgroundColor: "#0A1D56",
         color: "white",
@@ -13,7 +12,8 @@ const Navbar = () => {
         display: "flex",
         justifyContent: "space-between",
         fontSize: "18px",
-        width: "100%"
+        width: "100%",
+        height: "45px",
       }}>
         <div>
           <strong>Call us toll free:</strong> +91-1234567890 |
@@ -43,14 +43,18 @@ const Navbar = () => {
         height: "80px"
       }}>
         <div>
-          <img
-            src="client/public/Logo.jpg"
-            alt="Scrapbid Logo"
-            style={{ width: "120px", height: "auto" }}
-          />
+          <h2>ScrapBid</h2>
         </div>
 
-        {/* Search Bar */}
+        {/* Navigation Links (Moved to the center) */}
+        <div>
+          <Link to="/" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Home</Link>
+          <Link to="/ProductListing" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Products</Link>
+          <Link to="/profile" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Profile</Link>
+          <Link to="/logout" style={{ color: "white", textDecoration: "none" }}>Logout</Link>
+        </div>
+
+        {/* Search Bar (Moved to the right) */}
         <div style={{
           position: "relative",
           display: "flex",
@@ -72,14 +76,6 @@ const Navbar = () => {
             }}
           />
           <FaSearch style={{ color: "#0A1D56", cursor: "pointer" }} />
-        </div>
-
-        {/* Navigation Links */}
-        <div>
-          <Link to="/Slogan" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Home</Link>
-          <Link to="/ProductListing" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Products</Link>
-          <Link to="/profile" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Profile</Link>
-          <Link to="/logout" style={{ color: "white", textDecoration: "none" }}>Logout</Link>
         </div>
       </div>
     </div>
