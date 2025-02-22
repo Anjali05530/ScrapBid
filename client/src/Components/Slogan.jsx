@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar"; 
 import { FaSearch } from "react-icons/fa";
 import "./Slogan.css";
 
 const Slogan = () => {
   return (
     <div className="Slogan-container"style={{ 
+
       display: "flex", 
       flexDirection: "column", 
       alignItems: "center", 
@@ -14,8 +14,7 @@ const Slogan = () => {
       textAlign: "center", 
       color: "white"
     }}>
-      {/* Navbar */}
-      <Navbar />
+
 
       {/* Slogan + Search Bar Together */}
       <div style={{ marginTop: "100px" }}>

@@ -1,82 +1,32 @@
-// import React from "react";
-
-// const FeaturedProducts = () => {
-//   return (
-//     <div style={{ 
-//       height: "100vh", 
-//       display: "flex", 
-//       flexDirection: "column", 
-//       alignItems: "center", 
-//       justifyContent: "center", 
-//       backgroundColor: "#f8f9fa", 
-//       textAlign: "center", 
-//       padding: "20px"
-//     }}>
-//       <h1 style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "20px" }}>
-//         Featured Products
-//       </h1>
-
-//       <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
-//         {/* Sample Product Card */}
-//         <div style={{ 
-//           width: "250px", 
-//           padding: "15px", 
-//           borderRadius: "10px", 
-//           backgroundColor: "white", 
-//           boxShadow: "0px 4px 8px rgba(0,0,0,0.1)", 
-//           textAlign: "center"
-//         }}>
-//           <img src="https://via.placeholder.com/200" alt="Product 1" style={{ width: "100%", borderRadius: "10px" }} />
-//           <h3 style={{ margin: "10px 0" }}>Product 1</h3>
-//           <p style={{ color: "#555" }}>$99.99</p>
-//         </div>
-
-//         <div style={{ 
-//           width: "250px", 
-//           padding: "15px", 
-//           borderRadius: "10px", 
-//           backgroundColor: "white", 
-//           boxShadow: "0px 4px 8px rgba(0,0,0,0.1)", 
-//           textAlign: "center"
-//         }}>
-//           <img src="https://via.placeholder.com/200" alt="Product 2" style={{ width: "100%", borderRadius: "10px" }} />
-//           <h3 style={{ margin: "10px 0" }}>Product 2</h3>
-//           <p style={{ color: "#555" }}>$149.99</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FeaturedProducts;
-
 import React, { useState, useEffect } from "react";
 import { FaGavel, FaHeart } from "react-icons/fa";
-import FeaturedProduct1 from "./Assests/FeaturedProduct1.jpg";
-import FeaturedProduct2 from "./Assests/FeaturedProduct2.jpg";
+import laptop from "./Assests/laptop.jpg";
+import router from "./Assests/router.jpg";
+import fridge from "./Assests/fridge.jpg";
+import smartphone from "./Assests/smartphone.jpg";
 
 const auctions = [
   {
-    image: FeaturedProduct1,
+    image: laptop,
     productName: "Laptop",
     bid: "₨.100",
     endTime: Date.now() + 165 * 24 * 60 * 60 * 1000,
   },
   {
-    image: FeaturedProduct2,
+    image: smartphone,
     productName: "Smartphone",
     bid: "₨.150",
     endTime: Date.now() + 170 * 24 * 60 * 60 * 1000,
   },
   {
-    image: FeaturedProduct1,
-    productName: "Tablet",
+    image: fridge,
+    productName: "Fridge",
     bid: "₨.120",
     endTime: Date.now() + 167 * 24 * 60 * 60 * 1000,
   },
   {
-    image: FeaturedProduct1,
-    productName: "Smartwatch",
+    image: router,
+    productName: "Router",
     bid: "₨.80",
     endTime: Date.now() + 161 * 24 * 60 * 60 * 1000,
   },
@@ -85,9 +35,14 @@ const auctions = [
 const AuctionsSection = () => {
   return (
     <div style={styles.auctionSection}>
-      <h2 style={styles.sectionTitle}>
-        LATEST AUCTIONS <FaGavel style={styles.titleIcon} />
-      </h2>
+      <div style={styles.sectionHeader}>
+        <h2 style={styles.sectionTitle}>LATEST AUCTIONS</h2>
+        <div style={styles.lineContainer}>
+          <div style={styles.line}></div>
+          <FaGavel style={styles.titleIcon} />
+          <div style={styles.line}></div>
+        </div>
+      </div>
       <div style={styles.auctionContainer}>
         {auctions.map((auction, index) => (
           <AuctionCard key={index} auction={auction} />
@@ -111,6 +66,15 @@ const AuctionCard = ({ auction }) => {
     <div style={styles.auctionCard}>
       <div style={styles.imageContainer}>
         <img src={auction.image} alt={auction.productName} style={styles.image} />
+        <div style={styles.countdownOverlay}>
+          <p>Time left:</p>
+          <div style={styles.timeValues}>
+            <span>{timeLeft.days}d</span>
+            <span>{timeLeft.hours}h</span>
+            <span>{timeLeft.minutes}m</span>
+            <span>{timeLeft.seconds}s</span>
+          </div>
+        </div>
         <div style={styles.overlayIcons}>
           <div style={styles.icon}>
             <FaHeart />
@@ -118,15 +82,6 @@ const AuctionCard = ({ auction }) => {
         </div>
       </div>
       <h3 style={styles.productName}>{auction.productName}</h3>
-      <div style={styles.timer}>
-        <p>Time left:</p>
-        <div style={styles.timeValues}>
-          <span>{timeLeft.days}</span> Days
-          <span>{timeLeft.hours}</span> Hours
-          <span>{timeLeft.minutes}</span> Minutes
-          <span>{timeLeft.seconds}</span> Seconds
-        </div>
-      </div>
       <p style={styles.bid}>
         Starting Bid: <strong>{auction.bid}</strong>
       </p>
@@ -147,10 +102,16 @@ const calculateTimeLeft = (endTime) => {
   };
 };
 
+// Define styles
 const styles = {
   auctionSection: {
     textAlign: "center",
     padding: "40px",
+  },
+  sectionHeader: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   sectionTitle: {
     fontSize: "28px",
@@ -158,26 +119,40 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "40px",
-    marginBottom: "60px",
+    marginTop: "30px",
+    marginBottom: "10px",
+  },
+  lineContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
+    marginBottom: "30px",
+  },
+  line: {
+    width: "200px",
+    height: "2px",
+    backgroundColor: "black",
   },
   titleIcon: {
+    fontSize: "24px",
     color: "#007bff",
-    marginLeft: "8px",
+    marginLeft:"8px",
   },
   auctionContainer: {
     display: "flex",
     justifyContent: "space-between",
     flexWrap: "nowrap",
-    margin: "0 auto",
-    marginBottom: "60px",
+    gap: "20px",
+    margin:"0 auto",
+    marginBottom:"60px",
   },
   auctionCard: {
     background: "#fff",
     borderRadius: "10px",
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
     width: "300px",
-    minHeight: "250px",
+    minHeight:"250px",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -192,45 +167,44 @@ const styles = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    borderRadius: "10px 10px 0 0",
   },
   overlayIcons: {
     position: "absolute",
     top: "10px",
     left: "10px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "4px",
+    zIndex: 2,
   },
   icon: {
-    background: "white",
+    background: "rgba(255, 255, 255, 0.7)",
+    borderRadius: "50%",
     padding: "8px",
-    borderRadius: "5px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "30px",
-    height: "30px",
+    fontSize: "18px",
     cursor: "pointer",
-    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
   },
-  timer: {
-    background: "rgba(255, 255, 255, 0.9)",
-    padding: "10px",
-    fontSize: "16px",
+  countdownOverlay: {
+    position: "absolute",
+    bottom: "10px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    background: "rgba(255, 255, 255, 0.8)",
+    padding: "8px",
+    borderRadius: "8px",
+    fontSize: "14px",
     fontWeight: "bold",
-    margin: "10px 0",
   },
   timeValues: {
     display: "flex",
     justifyContent: "center",
-    gap: "10px",
-    fontSize: "10px",
+    gap: "8px",
   },
   productName: {
     fontSize: "22px",
     fontWeight: "bold",
     marginTop: "10px",
-    wordBreak: "break-word",
   },
   bid: {
     fontSize: "16px",
@@ -239,4 +213,3 @@ const styles = {
 };
 
 export default AuctionsSection;
-

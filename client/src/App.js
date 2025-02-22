@@ -9,19 +9,26 @@ import HowItWorks from "./Components/Howitworks";
 import ProductDetails from "./Components/ProductDetails";
 import ProductListing from "./Components/ProductListing";
 import Navbar from "./Components/Navbar";
+import Header from "./Components/Header";
+import CategoryGrid from "./Components/CategoryGrid";
+import NewsletterPage from "./Components/NewsletterPage";
+import Myaccount from "./Components/Myaccount";
+import AuctionListing from "./Components/Auctionlisting";
 const Layout = () => {
   const location = useLocation();
+  const isHomePage=location.pathname==="/";
 
   return (
-    <>
-      {location.pathname === "/" && <Navbar />}
+    <div style={{top:isHomePage ? "40px" : "0"}}>
+      {isHomePage && <Header />}
+      <Navbar isHomePage={isHomePage}/>
 
       <Routes>
         <Route path="/Login" element={<Login />} />
+        <Route path="/Myaccount" element={<Myaccount />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/ProductListing" element={<ProductListing />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-
         <Route
           path="/"
           element={
@@ -36,13 +43,22 @@ const Layout = () => {
                 <FeaturedProducts />
               </div>
               <div className="section">
+                <CategoryGrid />
+              </div>
+              <div className="section">
+                <AuctionListing />
+              </div>
+              <div className="section">
+                <NewsletterPage />
+              </div>
+              <div className="section">
                 <Footer />
               </div>
             </div>
           }
         />
       </Routes>
-    </>
+    </div>
   );
 };
 

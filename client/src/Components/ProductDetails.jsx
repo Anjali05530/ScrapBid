@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom"; // ✅ Import useParams and Link
+import { useParams, Link } from "react-router-dom";
 
 const products = [
   { id: 1, name: "Product A", price: 100, image: "https://via.placeholder.com/150" },
