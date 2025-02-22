@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Slogan from "./Components/Slogan";
-import FeaturedProducts from "./Components/FeaturedProducts";
 import Footer from "./Components/Footer";
 import HowItWorks from "./Components/Howitworks";
 import Navbar from "./Components/Navbar";
@@ -12,7 +11,8 @@ import CategoryGrid from "./Components/CategoryGrid";
 import NewsletterPage from "./Components/NewsletterPage";
 import Myaccount from "./Components/Myaccount";
 import AuctionListing from "./Components/Auctionlisting";
-import AuctionsSection from "./Components/FeaturedProducts";
+import { AuctionsSection, CategoryPage } from "./Components/FeaturedProducts"; 
+import ConsumerElectronicsPage from "./Components/ConsumerElectronicsPage";
 const Layout = () => {
   const location = useLocation();
   const isHomePage=location.pathname==="/";
@@ -27,6 +27,8 @@ const Layout = () => {
         <Route path="/Myaccount" element={<Myaccount />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/AuctionsSection" element={<AuctionsSection hideHeader={true}  />} />
+        <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="/category/Consumer%20Electronics" element={<ConsumerElectronicsPage />} />
         <Route
           path="/"
           element={
@@ -38,7 +40,7 @@ const Layout = () => {
                 <HowItWorks />
               </div>
               <div className="section">
-                <FeaturedProducts />
+                <AuctionsSection />
               </div>
               <div className="section">
                 <CategoryGrid />

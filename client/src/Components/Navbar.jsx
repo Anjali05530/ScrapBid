@@ -114,7 +114,7 @@ const Navbar = ({ isHomePage }) => {
                   padding: "10px 0",
                 }}
               >
-                <Link to="/ConsumerElectronics" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",fontSize:"20px", borderBottom: "1px solid #ccc" }}>Consumer Electronics</Link>
+                <Link to="/category/Consumer%20Electronics" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",fontSize:"20px", borderBottom: "1px solid #ccc" }}>Consumer Electronics</Link>
                 <Link to="/PowerEnergyDevices" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black", borderBottom: "1px solid #ccc" }}>Power & Energy Devices</Link>
                 <Link to="/HomeKitchenAppliances" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",borderBottom: "1px solid #ccc" }}>Home & Kitchen Appliances</Link>
                 <Link to="/GamingEntertainment" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black" }}>Gaming & Entertainment</Link>
