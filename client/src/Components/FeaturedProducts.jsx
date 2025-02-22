@@ -1,40 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaGavel, FaHeart } from "react-icons/fa";
-import laptop from "./Assests/laptop.jpg";
-import router from "./Assests/router.jpg";
-import fridge from "./Assests/fridge.jpg";
-import smartphone from "./Assests/smartphone.jpg";
-
-const auctions = [
-  {
-    image: laptop,
-    productName: "Laptop",
-    bid: "₨.100",
-    endTime: Date.now() + 165 * 24 * 60 * 60 * 1000,
-  },
-  {
-    image: smartphone,
-    productName: "Smartphone",
-    bid: "₨.150",
-    endTime: Date.now() + 170 * 24 * 60 * 60 * 1000,
-  },
-  {
-    image: fridge,
-    productName: "Fridge",
-    bid: "₨.120",
-    endTime: Date.now() + 167 * 24 * 60 * 60 * 1000,
-  },
-  {
-    image: router,
-    productName: "Router",
-    bid: "₨.80",
-    endTime: Date.now() + 161 * 24 * 60 * 60 * 1000,
-  },
-];
-
-const AuctionsSection = () => {
+import auctions from "./auctionData";
+const AuctionsSection = ({hideHeader}) => {
   return (
     <div style={styles.auctionSection}>
+      {!hideHeader &&(
       <div style={styles.sectionHeader}>
         <h2 style={styles.sectionTitle}>LATEST AUCTIONS</h2>
         <div style={styles.lineContainer}>
@@ -43,6 +13,7 @@ const AuctionsSection = () => {
           <div style={styles.line}></div>
         </div>
       </div>
+      )}
       <div style={styles.auctionContainer}>
         {auctions.map((auction, index) => (
           <AuctionCard key={index} auction={auction} />
@@ -76,6 +47,9 @@ const AuctionCard = ({ auction }) => {
           </div>
         </div>
         <div style={styles.overlayIcons}>
+        <div style={styles.icon}>
+            <FaGavel />
+          </div>
           <div style={styles.icon}>
             <FaHeart />
           </div>

@@ -6,14 +6,13 @@ import Slogan from "./Components/Slogan";
 import FeaturedProducts from "./Components/FeaturedProducts";
 import Footer from "./Components/Footer";
 import HowItWorks from "./Components/Howitworks";
-import ProductDetails from "./Components/ProductDetails";
-import ProductListing from "./Components/ProductListing";
 import Navbar from "./Components/Navbar";
 import Header from "./Components/Header";
 import CategoryGrid from "./Components/CategoryGrid";
 import NewsletterPage from "./Components/NewsletterPage";
 import Myaccount from "./Components/Myaccount";
 import AuctionListing from "./Components/Auctionlisting";
+import AuctionsSection from "./Components/FeaturedProducts";
 const Layout = () => {
   const location = useLocation();
   const isHomePage=location.pathname==="/";
@@ -27,8 +26,7 @@ const Layout = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Myaccount" element={<Myaccount />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/ProductListing" element={<ProductListing />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/AuctionsSection" element={<AuctionsSection hideHeader={true}  />} />
         <Route
           path="/"
           element={

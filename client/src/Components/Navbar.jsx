@@ -96,7 +96,7 @@ const Navbar = ({ isHomePage }) => {
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
-            <Link to="/ProductListing" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Products</Link>
+            <Link to="/AuctionsSection" style={{ color: "white", marginRight: "15px", textDecoration: "none" }}>Products</Link>
             {showDropdown && (
               <div
                 style={{
@@ -114,10 +114,10 @@ const Navbar = ({ isHomePage }) => {
                   padding: "10px 0",
                 }}
               >
-                <Link to="/ProductListing/ConsumerElectronics" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",fontSize:"20px", borderBottom: "1px solid #ccc" }}>Consumer Electronics</Link>
-                <Link to="/ProductListing/PowerEnergyDevices" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black", borderBottom: "1px solid #ccc" }}>Power & Energy Devices</Link>
-                <Link to="/ProductListing/HomeKitchenAppliances" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",borderBottom: "1px solid #ccc" }}>Home & Kitchen Appliances</Link>
-                <Link to="/ProductListing/GamingEntertainment" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black" }}>Gaming & Entertainment</Link>
+                <Link to="/ConsumerElectronics" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",fontSize:"20px", borderBottom: "1px solid #ccc" }}>Consumer Electronics</Link>
+                <Link to="/PowerEnergyDevices" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black", borderBottom: "1px solid #ccc" }}>Power & Energy Devices</Link>
+                <Link to="/HomeKitchenAppliances" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black",borderBottom: "1px solid #ccc" }}>Home & Kitchen Appliances</Link>
+                <Link to="/GamingEntertainment" style={{ display: "block", padding: "10px", textDecoration: "none", color: "black" }}>Gaming & Entertainment</Link>
               </div>
             )}
           </div>
