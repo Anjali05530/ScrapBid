@@ -13,6 +13,7 @@ import Myaccount from "./Components/Myaccount";
 import AuctionListing from "./Components/Auctionlisting";
 import { AuctionsSection, CategoryPage } from "./Components/FeaturedProducts"; 
 import ConsumerElectronicsPage from "./Components/ConsumerElectronicsPage";
+import KitchenAppliancesPage from "./Components/KitchenAppliancesPage";
 const Layout = () => {
   const location = useLocation();
   const isHomePage=location.pathname==="/";
@@ -29,6 +30,8 @@ const Layout = () => {
         <Route path="/AuctionsSection" element={<AuctionsSection hideHeader={true}  />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/category/Consumer%20Electronics" element={<ConsumerElectronicsPage />} />
+        <Route path="/category/KitchenAppliances" element={<KitchenAppliancesPage />} />
+
         <Route
           path="/"
           element={

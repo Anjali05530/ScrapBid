@@ -10,7 +10,6 @@
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
-/* If navbar height is around 60px */
 body {
-  padding-top: 240px; /* Adjust according to your navbar height */
+  padding-top: 235px; /* Increase if needed */
 }

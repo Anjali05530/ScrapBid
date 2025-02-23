@@ -24,7 +24,7 @@ const auctions = [
     id:3,
     image: fridge,
     productName: "Fridge",
-    category:"Home Appliances",
+    category:"Kitchen Appliances",
     bid: "₨.120",
     endTime: Date.now() + 167 * 24 * 60 * 60 * 1000,
   },

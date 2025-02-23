@@ -36,7 +36,7 @@ const CategoryPage = () => {
   );
 
   return (
-    <div style={{ textAlign: "center", marginTop: "-260px" }}>
+    <div style={{ textAlign: "center", marginTop: "-270px" }}>
       <h2>{category} Products</h2>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
         {filteredProducts.length > 0 ? (
@@ -92,7 +92,7 @@ const ProductCard = ({ item }) => {
 };
 
 const styles = {
-  auctionSection: { textAlign: "center", padding: "40px" },
+  auctionSection: { textAlign: "center", padding: "40px", },
   sectionHeader: { display: "flex", flexDirection: "column", alignItems: "center" },
   sectionTitle: { fontSize: "28px", fontWeight: "bold", marginBottom: "10px" },
   lineContainer: { display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" },
