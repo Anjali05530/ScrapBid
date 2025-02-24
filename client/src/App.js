@@ -14,6 +14,8 @@ import AuctionListing from "./Components/Auctionlisting";
 import { AuctionsSection, CategoryPage } from "./Components/FeaturedProducts"; 
 import ConsumerElectronicsPage from "./Components/ConsumerElectronicsPage";
 import KitchenAppliancesPage from "./Components/KitchenAppliancesPage";
+import WishlistPage from "./Components/WishlistPage";
+import { WishlistProvider } from "./Components/WishlistContext";
 const Layout = () => {
   const location = useLocation();
   const isHomePage=location.pathname==="/";
@@ -31,7 +33,7 @@ const Layout = () => {
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/category/Consumer%20Electronics" element={<ConsumerElectronicsPage />} />
         <Route path="/category/KitchenAppliances" element={<KitchenAppliancesPage />} />
-
+        <Route path="/wishlist" element={<WishlistPage/>} />
         <Route
           path="/"
           element={
@@ -67,9 +69,11 @@ const Layout = () => {
 
 function App() {
   return (
+    <WishlistProvider>
     <Router>
       <Layout />
     </Router>
+    </WishlistProvider>
   );
 }
 

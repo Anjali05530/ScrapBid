@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaGavel, FaHeart } from "react-icons/fa";
 import auctionData from "./auctionData";
+import { useWishlist } from "./WishlistContext"; // ✅ Fixed import path
 
 const AuctionsSection = ({ hideHeader }) => {
   const sortedAuctions = [...auctionData].sort((a, b) => b.bid - a.bid);
@@ -50,6 +51,8 @@ const CategoryPage = () => {
 };
 
 const ProductCard = ({ item }) => {
+  const { toggleWishlist, isInWishlist } = useWishlist();
+  const [hovered, setHovered] = useState(false);
   const [timeLeft, setTimeLeft] = useState(item.endTime - Date.now());
 
   useEffect(() => {
@@ -78,7 +81,15 @@ const ProductCard = ({ item }) => {
         </div>
         <div style={styles.overlayIcons}>
           <FaGavel style={styles.icon} />
-          <FaHeart style={styles.icon} />
+          <FaHeart
+            onClick={() => toggleWishlist(item)}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+              ...styles.icon,
+              color: isInWishlist(item.id) || hovered ? "red" : "black",
+            }}
+          />
         </div>
       </div>
       <div style={{ padding: "15px" }}>
@@ -92,23 +103,23 @@ const ProductCard = ({ item }) => {
 };
 
 const styles = {
-  auctionSection: { textAlign: "center", padding: "40px", },
+  auctionSection: { textAlign: "center", padding: "40px" },
   sectionHeader: { display: "flex", flexDirection: "column", alignItems: "center" },
   sectionTitle: { fontSize: "28px", fontWeight: "bold", marginBottom: "10px" },
   lineContainer: { display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" },
   line: { width: "200px", height: "2px", backgroundColor: "black" },
   titleIcon: { fontSize: "24px", color: "#007bff" },
-  auctionContainer: { display: "flex", flexWrap: "wrap", gap: "35px", justifyContent: "center" },
+  auctionContainer: { display: "flex", flexWrap: "wrap", gap: "75px", justifyContent: "center" },
   productCard: {
-    width: "300px",
-    height:"355px",
+    width: "270px",
+    height: "300px",
     borderRadius: "15px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
     overflow: "hidden",
     background: "white",
     textAlign: "center",
   },
-  imageContainer: { position: "relative", width: "100%", height: "250px" },
+  imageContainer: { position: "relative", width: "100%", height: "200px" },
   image: { width: "100%", height: "100%", objectFit: "cover" },
   countdownOverlay: {
     position: "absolute",
@@ -143,4 +154,4 @@ const styles = {
   },
 };
 
-export { AuctionsSection, CategoryPage };
+export { AuctionsSection, CategoryPage, ProductCard };

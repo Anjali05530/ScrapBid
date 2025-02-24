@@ -18,7 +18,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: white;
-    background-color: darkblue;
+    background-color: #3489be;
+    margin-top: -140px;
   }
   
   /* Heading */

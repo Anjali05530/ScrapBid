@@ -66,10 +66,6 @@ const Register = () => {
         {/* Additional Fields for Seller */}
         {userType === "seller" && (
           <>
-            <div className="form-group">
-              <label>Aadhar Card Number:</label>
-              <input type="text" name="aadhar" value={formData.aadhar} onChange={handleChange} required />
-            </div>
 
             <div className="form-group">
               <label>Contact Number:</label>
