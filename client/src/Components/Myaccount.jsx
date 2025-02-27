@@ -6,21 +6,22 @@ const MyAccount = () => {
   const containerStyle = {
     display: "flex",
     width: "100%",
-    height: "60vh", // Decreased height to 90% of the viewport height
+    height: "50vh", // Decreased height to 90% of the viewport height
     fontFamily: "Arial, sans-serif",
   };
 
   const sidebarStyle = {
-    width: "250px",
+    width: "270px",
     backgroundColor: "#66c2ff",
-    padding: "20px",
+    padding: "4px",
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "20px",
     height: "80%", // Ensures the sidebar takes full height of the container
     position: "fixed", // Keeps the sidebar fixed on the left side
     top: "100px",
-    left: 0,
+    left: "15px",
+    borderRadius:"10px"
   };
 
   const sidebarItemStyle = {
@@ -28,9 +29,10 @@ const MyAccount = () => {
     backgroundColor: "#ffffff",
     color: "#000",
     fontWeight: "bold",
-    borderRadius: "4px",
+    borderRadius: "6px",
     cursor: "pointer",
     textAlign: "left",
+    width:"-700px"
   };
 
   const activeSidebarItem = {
@@ -42,20 +44,20 @@ const MyAccount = () => {
   const contentStyle = {
     flex: 1,
     padding: "20px",
-    marginLeft: "270px", // Adjusted to give space for the sidebar
+    marginLeft: "20px", // Adjusted to give space for the sidebar
     height: "100%", // Ensures the content area takes full height
   };
 
   const pages = {
-    dashboard: <h2>Welcome to your Dashboard</h2>,
-    orders: <h2>Your Orders</h2>,
-    downloads: <h2>Your Downloads</h2>,
-    addresses: <h2>Manage Addresses</h2>,
-    accountDetails: <h2>Update Account Details</h2>,
-    myAuctionBids: <h2>Your Auction Bids</h2>,
-    myWatchlist: <h2>Your Watchlist</h2>,
-    myAuctionActivity: <h2>Auction Activity</h2>,
-    auctionSettings: <h2>Auction Settings</h2>,
+    DASHBOARD: <h2>Welcome to your Dashboard</h2>,
+    ORDERS: <h2>Your Orders</h2>,
+    DOWNLOADS: <h2>Your Downloads</h2>,
+    ADDRESSES: <h2>Manage Addresses</h2>,
+    ACCOUNTDETAILS: <h2>Update Account Details</h2>,
+    MYAUCTIONBIDS: <h2>Your Auction Bids</h2>,
+    MYWATCHLIST: <h2>Your Watchlist</h2>,
+    MYAUCTIONACTIVITY: <h2>Auction Activity</h2>,
+    AUCTIONSETTINGS: <h2>Auction Settings</h2>,
   };
 
   return (

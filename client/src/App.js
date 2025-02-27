@@ -10,12 +10,14 @@ import Header from "./Components/Header";
 import CategoryGrid from "./Components/CategoryGrid";
 import NewsletterPage from "./Components/NewsletterPage";
 import Myaccount from "./Components/Myaccount";
-import AuctionListing from "./Components/Auctionlisting";
 import { AuctionsSection, CategoryPage } from "./Components/FeaturedProducts"; 
 import ConsumerElectronicsPage from "./Components/ConsumerElectronicsPage";
 import KitchenAppliancesPage from "./Components/KitchenAppliancesPage";
 import WishlistPage from "./Components/WishlistPage";
 import { WishlistProvider } from "./Components/WishlistContext";
+import PowerEnergyDevicesPage from "./Components/PowerEnergyDevicesPage";
+import GamingEntertainment from "./Components/GamingEntertainment";
+
 const Layout = () => {
   const location = useLocation();
   const isHomePage=location.pathname==="/";
@@ -33,6 +35,8 @@ const Layout = () => {
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/category/Consumer%20Electronics" element={<ConsumerElectronicsPage />} />
         <Route path="/category/KitchenAppliances" element={<KitchenAppliancesPage />} />
+        <Route path="/category/PowerEnergyDevicesPage" element={<PowerEnergyDevicesPage/>} />
+        <Route path="/category/GamingEntertainment" element={<GamingEntertainment/>} />
         <Route path="/wishlist" element={<WishlistPage/>} />
         <Route
           path="/"
@@ -49,9 +53,6 @@ const Layout = () => {
               </div>
               <div className="section">
                 <CategoryGrid />
-              </div>
-              <div className="section">
-                <AuctionListing />
               </div>
               <div className="section">
                 <NewsletterPage />
