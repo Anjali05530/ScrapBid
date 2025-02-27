@@ -53,6 +53,7 @@ const CategoryPage = () => {
 const ProductCard = ({ item }) => {
   const { toggleWishlist, isInWishlist } = useWishlist();
   const [hovered, setHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [timeLeft, setTimeLeft] = useState(item.endTime - Date.now());
 
   useEffect(() => {
@@ -72,7 +73,12 @@ const ProductCard = ({ item }) => {
   };
 
   return (
-    <div style={styles.productCard}>
+    <div style={{...styles.productCard,
+      transform: isHovered ? "scale(1.05)" : "scale(1)",
+      boxShadow: isHovered ? "0px 6px 15px rgba(0, 0, 0, 0.3)" : styles.productCard.boxShadow,
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    }} onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}>
       <div style={styles.imageContainer}>
         <img src={item.image} alt={item.productName} style={styles.image} />
         <div style={styles.countdownOverlay}>
@@ -103,7 +109,7 @@ const ProductCard = ({ item }) => {
 };
 
 const styles = {
-  auctionSection: { textAlign: "center", padding: "40px" },
+  auctionSection: { textAlign: "center", padding: "50px" },
   sectionHeader: { display: "flex", flexDirection: "column", alignItems: "center" },
   sectionTitle: { fontSize: "28px", fontWeight: "bold", marginBottom: "10px" },
   lineContainer: { display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" },

@@ -17,6 +17,7 @@ import WishlistPage from "./Components/WishlistPage";
 import { WishlistProvider } from "./Components/WishlistContext";
 import PowerEnergyDevicesPage from "./Components/PowerEnergyDevicesPage";
 import GamingEntertainment from "./Components/GamingEntertainment";
+import AuctionListing from "./Components/AuctionListing";
 
 const Layout = () => {
   const location = useLocation();
@@ -53,6 +54,9 @@ const Layout = () => {
               </div>
               <div className="section">
                 <CategoryGrid />
+              </div>
+              <div className="section">
+                <AuctionListing />
               </div>
               <div className="section">
                 <NewsletterPage />

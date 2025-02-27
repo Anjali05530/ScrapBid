@@ -9,7 +9,7 @@ const PowerEnergyDevicesPage = () => {
 
     // Normalize category names to avoid case mismatches
     const powerEnergyProducts = auctionData.filter(
-        (item) => item.category?.trim().toLowerCase() === "power & energy devices"
+        (item) => item.category?.trim().toLowerCase() === "power energy devices"
     );
 
     return (

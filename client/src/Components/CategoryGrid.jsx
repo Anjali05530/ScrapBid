@@ -27,33 +27,53 @@ const categories = [
   },
 ];
 
-const CategoryGrid = () => {
-  return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridTemplateRows: "auto auto",
-        gap: "20px",
-        padding: "16px",
-        maxWidth: "1300px",
-        margin: "auto",
-      }}
-    >
-      <div style={{ gridColumn: "1 / 2", gridRow: "1 / 2", height: "250px" }}>
-        <CategoryCard category={categories[0]} />
+const CategoryGrid = ({ layout = "grid" }) => {
+  if (layout === "column") {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "30px",
+          maxWidth: "1400px",
+          margin: "auto",
+        }}
+      >
+        {categories.map((category, index) => (
+          <div key={index} style={{ height: "300px", width: "100%" }}>
+            <CategoryCard category={category} />
+          </div>
+        ))}
       </div>
-      <div style={{ gridColumn: "2 / 3", gridRow: "1 / 3", height: "350px" }}>
-        <CategoryCard category={categories[1]} />
+    );
+  } else {
+    return (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "auto auto",
+          gap: "20px",
+          padding: "16px",
+          maxWidth: "1350px",
+          margin: "auto",
+        }}
+      >
+        <div style={{ gridColumn: "1 / 2", gridRow: "1 / 2", height: "200px" }}>
+          <CategoryCard category={categories[0]} />
+        </div>
+        <div style={{ gridColumn: "2 / 3", gridRow: "1 / 3", height: "300px" }}>
+          <CategoryCard category={categories[1]} />
+        </div>
+        <div style={{ gridColumn: "1 / 2", gridRow: "2 / 4", height: "300px" }}>
+          <CategoryCard category={categories[2]} />
+        </div>
+        <div style={{ gridColumn: "2 / 3", gridRow: "3 / 4", height: "200px" }}>
+          <CategoryCard category={categories[3]} />
+        </div>
       </div>
-      <div style={{ gridColumn: "1 / 2", gridRow: "2 / 4", height: "350px" }}>
-        <CategoryCard category={categories[2]} />
-      </div>
-      <div style={{ gridColumn: "2 / 3", gridRow: "3 / 4", height: "250px" }}>
-        <CategoryCard category={categories[3]} />
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 const CategoryCard = ({ category }) => {
@@ -61,13 +81,12 @@ const CategoryCard = ({ category }) => {
     <div
       style={{
         position: "relative",
-        borderRadius: "0px",
+        borderRadius: "12px",
         overflow: "hidden",
         width: "100%",
         height: "100%",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
       }}
-
       onMouseOver={(e) => {
         e.currentTarget.style.transform = "scale(1.05)";
         e.currentTarget.style.boxShadow = "0px 8px 20px rgba(0, 0, 0, 0.3)";
@@ -90,19 +109,28 @@ const CategoryCard = ({ category }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          alignItems:"flex-start",
+          alignItems: "flex-start",
           padding: "16px",
         }}
       >
-        <h2 style={{ color: "white", fontSize: "24px", fontWeight: "bold", marginBottom: "4px" }}>
+        <h2
+          style={{
+            color: "white",
+            fontSize: "24px",
+            fontWeight: "bold",
+            marginBottom: "4px",
+          }}
+        >
           {category.title}
         </h2>
-        <p style={{ color: "white", fontSize: "14px" }}>{category.auctions} Auctions</p>
+        <p style={{ color: "white", fontSize: "14px" }}>
+          {category.auctions} Auctions
+        </p>
         <button
           style={{
             marginTop: "10px",
             padding: "12px 16px",
-            width:"140px",
+            width: "140px",
             fontSize: "16px",
             border: "1px solid white",
             color: "white",
