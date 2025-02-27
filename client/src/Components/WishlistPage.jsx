@@ -7,13 +7,20 @@ const WishlistPage = () => {
 
   console.log(wishlist); // Debugging: Log wishlist data to check if it's correct
 
+  const wishlistGridStyle = {
+    display: "flex",
+    flexWrap: "wrap",  // Ensures responsiveness
+    gap: "20px",       // Adds spacing between items
+    justifyContent: "flex-start", // Aligns items in a row
+  };
+
   return (
     <div className="wishlist-container">
       <h2>My Wishlist</h2>
       {wishlist.length === 0 ? (
         <p>Your wishlist is empty.</p>
       ) : (
-        <div className="wishlist-grid">
+        <div style={wishlistGridStyle}>
           {wishlist.map((item) => (
             <ProductCard 
               key={item.id} 
@@ -26,6 +33,5 @@ const WishlistPage = () => {
     </div>
   );
 };
-
 
 export default WishlistPage;

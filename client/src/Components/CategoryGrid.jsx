@@ -6,12 +6,12 @@ import Power from "./Assests/Power.jpg";
 
 const categories = [
   {
-    title: "CONSUMER ELECTRONICS",
+    title: "Computer and Networking",
     auctions: 15,
     image: ConsumerElectronics,
   },
   {
-    title: "GAME & ENTERTANMENT",
+    title: "Gadgets and Devices",
     auctions: 15,
     image: Gaming,
   },
@@ -21,7 +21,7 @@ const categories = [
     image: Home,
   },
   {
-    title: "POWER & ENERGY",
+    title: "Electronic Components",
     auctions: 15,
     image: Power,
   },

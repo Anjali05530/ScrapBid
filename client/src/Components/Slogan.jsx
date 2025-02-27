@@ -17,7 +17,7 @@ const Slogan = () => {
 
 
       {/* Slogan + Search Bar Together */}
-      <div style={{ marginTop: "-120px" }}>
+      <div style={{ marginTop: "70px" }}>
         <h1 style={{ fontSize: "50px", fontWeight: "bold", marginBottom: "10px",animation: "floating 3s ease-in-out infinite" }}>
           Turn Scrap into Treasure - Bid, Win, Recycle!
         </h1>

@@ -83,9 +83,11 @@ const Navbar = ({ isHomePage }) => {
           height: "80px",
         }}
       >
-        <div>
-          <h2>ScrapBid</h2>
+        <div style={{ fontSize: "33px", fontWeight: "bold" }}>
+          <span style={{ color: "#87CEFA" }}>S</span>crap
+          <span style={{ color: "#87CEFA" }}>B</span>id
         </div>
+
 
         {/* Navigation Links */}
         <div style={{ display: "flex", alignItems: "center" }}>
