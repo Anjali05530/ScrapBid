@@ -135,7 +135,7 @@ const Footer = () => {
   const footerStyle = {
     backgroundColor: "#0c2a58",
     color: "white",
-    padding: "40px 80px",
+    padding: "15px 80px",
     textAlign: "left",
     position: "relative",
     width: "100%",
@@ -206,7 +206,7 @@ const Footer = () => {
     display: "flex",
     justifyContent: "space-between", // Aligns text to right & left
     width: "100%",
-    padding: "10px 80px",
+    padding: "10px 60px",
     fontSize: "14px",
   };
 
@@ -217,7 +217,7 @@ const Footer = () => {
     justifyContent: "space-between",
     background: "#72c6ef", // Light Blue
     width: "100%",
-    padding: "30px 80px",
+    padding:"10px",
     textAlign: "center",
   };
 
@@ -225,25 +225,24 @@ const Footer = () => {
     display: "flex",
     alignItems: "center",
     background: "white",
-    borderRadius: "25px",
+    borderRadius: "55px",
     overflow: "hidden",
-    maxWidth: "400px",
-    width: "100%",
+    maxWidth: "300px",
+    width: "90%",
     boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
   };
 
   const searchInputStyle = {
     flex: "1",
     border: "none",
-    padding: "15px",
+    padding: "10px",
     fontSize: "16px",
     outline: "none",
   };
 
   const searchButtonStyle = {
     background: "#333",
-    border: "none",
-    padding: "15px",
+    padding: "10px",
     color: "white",
     cursor: "pointer",
     display: "flex",
@@ -307,7 +306,7 @@ const Footer = () => {
 
         <div style={bottomTextStyle}>
         <p style={{ textAlign: "left", flex: "1" }}>
-      ScrapBid Auctions Theme by Model Theme | Copyright © 2025
+      ScrapBid Auctions Theme by Code Wizards | Copyright © Nikumbhe Anjali
     </p>
     <p style={{ textAlign: "right", flex: "1" }}>
       Elite Author on ThemeForest.

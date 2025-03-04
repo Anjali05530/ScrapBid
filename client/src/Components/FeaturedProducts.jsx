@@ -109,10 +109,10 @@ const ProductCard = ({ item }) => {
 };
 
 const styles = {
-  auctionSection: { textAlign: "center", padding: "50px" },
+  auctionSection: { textAlign: "center",marginTop:"-20px"},
   sectionHeader: { display: "flex", flexDirection: "column", alignItems: "center" },
   sectionTitle: { fontSize: "28px", fontWeight: "bold", marginBottom: "10px" },
-  lineContainer: { display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" },
+  lineContainer: { display: "flex", alignItems: "center", gap: "6px", marginBottom: "20px" },
   line: { width: "200px", height: "2px", backgroundColor: "black" },
   titleIcon: { fontSize: "24px", color: "#007bff" },
   auctionContainer: { display: "flex", flexWrap: "wrap", gap: "75px", justifyContent: "center" },

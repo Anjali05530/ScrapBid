@@ -13,7 +13,6 @@ const NewsletterSubscription = () => {
     justifyContent: "center",
     color: "black",
     marginTop:"50px",
-    marginBottom:"100px",
     backdropFilter: "blur(8px)",
   };
 

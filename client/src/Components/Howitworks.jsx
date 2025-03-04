@@ -15,9 +15,8 @@ const FeaturesSection = () => {
       alignItems: "center",
       justifyContent:"center",
       backgroundColor: "#87CEFA",
-      padding: "30px 0",
       width: "100vw",
-      height: "auto",
+      height: "160px",
     }}>
       <div style={{
         display: "flex",
@@ -25,7 +24,7 @@ const FeaturesSection = () => {
         alignItems: "center",
         flexWrap: "wrap",
         width: "100%",
-        gap: "30px",
+        gap: "10px",
       }}>
         {features.map((feature, index) => (
           <div key={index} style={{

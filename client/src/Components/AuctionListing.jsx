@@ -41,7 +41,7 @@ const AuctionListing = () => {
                 flexWrap: "wrap",
                 gap: "20px",
                 justifyContent: "flex-start",
-                marginBottom: "30px",
+                marginBottom: "50px",
               }}
             >
               {displayProducts.map((product) => (
