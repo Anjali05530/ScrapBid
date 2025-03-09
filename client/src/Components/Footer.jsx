@@ -167,15 +167,14 @@ const Footer = () => {
     display: "flex",
     alignItems: "center",
     backgroundColor: "white",
-    borderRadius: "50px",
+    borderRadius: "60px",
     overflow: "hidden",
     maxWidth: "400px",
     height: "45px",
-    padding: "5px",
   };
 
   const inputStyle = {
-    padding: "10px",
+    padding: "16px",
     flex: "1",
     border: "none",
     outline: "none",
@@ -217,7 +216,7 @@ const Footer = () => {
     justifyContent: "space-between",
     background: "#72c6ef", // Light Blue
     width: "100%",
-    padding:"10px",
+    padding:"12px",
     textAlign: "center",
   };
 
@@ -242,7 +241,7 @@ const Footer = () => {
 
   const searchButtonStyle = {
     background: "#333",
-    padding: "10px",
+    padding: "14px",
     color: "white",
     cursor: "pointer",
     display: "flex",
@@ -283,17 +282,10 @@ const Footer = () => {
 
           <div style={sectionStyle}>
             <h3>Useful Links</h3>
-            <a href="#" style={linkStyle}>Category</a>
-            <a href="#" style={linkStyle}>Laptop</a>
-            <a href="#" style={linkStyle}>Headphones</a>
+            <a href="/AuctionsSection" style={linkStyle}>Products</a>
+            <a href="/" style={linkStyle}>Home</a>
           </div>
 
-          <div style={sectionStyle}>
-            <h3>Our Policy</h3>
-            <a href="#" style={linkStyle}>Homepage</a>
-            <a href="#" style={linkStyle}>Blog</a>
-            <a href="#" style={linkStyle}>Services</a>
-          </div>
 
           <div style={sectionStyle}>
             <h3>Subscribe to our Newsletter</h3>
@@ -306,7 +298,7 @@ const Footer = () => {
 
         <div style={bottomTextStyle}>
         <p style={{ textAlign: "left", flex: "1" }}>
-      ScrapBid Auctions Theme by Code Wizards | Copyright © Nikumbhe Anjali
+      ScrapBid Auctions Theme by Code Wizards | Copyright © Code Wizards
     </p>
     <p style={{ textAlign: "right", flex: "1" }}>
       Elite Author on ThemeForest.

@@ -6,7 +6,7 @@ const Navbar = ({ isHomePage }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <div style={{ position: "fixed", top: isHomePage ? "40px" : "0", left: 0, width: "100%", zIndex: 999 }}>
+    <div style={{ position: "fixed", top: isHomePage ? "40px" : "40px", left: 0, width: "100%", zIndex: 999 }}>
       <div
         style={{
           backgroundColor: "#0A1D56",
@@ -108,7 +108,7 @@ const Navbar = ({ isHomePage }) => {
             }}
           >
             <FaShoppingBasket style={{ color: "#87CEFA", fontSize: "20px", marginLeft: "10px" }} />
-            My Cart (0)
+            My Cart
           </Link>
         </div>
       </div>

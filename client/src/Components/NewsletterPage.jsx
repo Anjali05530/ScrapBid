@@ -17,7 +17,7 @@ const NewsletterSubscription = () => {
   };
 
   const overlayStyle = {
-    padding: "24px",
+    padding: "30px",
     textAlign: "center",
     borderRadius: "8px",
     width: "75%",
@@ -29,7 +29,7 @@ const NewsletterSubscription = () => {
     width: "100%",
     maxWidth: "300px",
     borderTopLeftRadius: "8px",
-    borderBottomLeftRadius: "8px",
+    borderBottomLeftRadius: "10px",
     border: "none",
     outline: "none",
     color: "black",
@@ -41,7 +41,7 @@ const NewsletterSubscription = () => {
     color: "white",
     fontWeight: "bold",
     borderTopRightRadius: "8px",
-    borderBottomRightRadius: "8px",
+    borderBottomRightRadius: "10px",
     border: "none",
     cursor: "pointer",
   };

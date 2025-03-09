@@ -1,124 +1,115 @@
-/* Background */
-body {
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Login Container */
-  .login-container {
-    width: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    color: white;
-    background-color: #3489be;
-    margin-top: -140px;
-  }
-  
-  /* Heading */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  
-  /* Input Fields */
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    font-weight: bold;
-    display: block;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.2);
-    color: black;
-  }
-  
-  .form-group input::placeholder {
-    color: black;
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border: 2px solid black;
-  }
-  
-  /* Remember Me */
-  .remember-me {
-    display: flex;
-    align-items: center;
-    justify-content: left; /* Align to the right */
-    margin: 10px 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.remember-me input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    margin: 0; /* Remove any extra spacing */
-    accent-color: #ff7eb3; /* Modern way to style the checkbox */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(to top, #3aa8da, #401eb0);
+  background-size: cover;
+  position: relative;
 }
 
-.remember-me label {
-    font-size: 14px;
-    color: white;
-    cursor: pointer;
-    margin-left: 5px; /* Small space between checkbox and label */
-    display: inline-block;
-    line-height: 16px; /* Aligns with checkbox size */
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
 }
 
+.login-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  width: 400px;
+}
 
-  
-  /* Button */
-  button {
-    width: 100%;
-    padding: 10px;
-    background: #ff7eb3;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #ff5e99;
-  }
-  
-  /* Links */
-  .links {
-    margin-top: 10px;
-  }
-  
-  .forgot-password,
-  .register-link {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-  }
-  
-  .forgot-password:hover,
-  .register-link:hover {
-    text-decoration: underline;
-  }
-  
+.login-box h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  padding-left: 45px;
+  border-radius: 50px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 18px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: #3a09b7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #2a0e61;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #cbf1ff;
+  color: #2a0e61;
+}
+
+p {
+  color: white;
+  margin-top: 10px;
+}
+
+p a {
+  color: #3a09b7;
+  text-decoration: none;
+  font-weight: bold;
+}
